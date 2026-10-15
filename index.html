@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>城北化学工業株式会社 | 環境対応製品・ポリエチレン包装資材の総合メーカー</title>
+  <meta name="description" content="東京都板橋区の城北化学工業株式会社。ポリエチレンフィルム・ポリ袋・バイオマス包装資材の製造販売。「ご用命の商品は数は少量でも、安く・早く・良品」をモットーに小ロット・短納期にお応えします。">
+  
+  <!-- Google Fonts: Noto Sans JP (日本語) & Montserrat (欧文見出し・数字) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- 共通スタイルシート -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <!-- ==========================================
+       オープニングアニメーション（中央から左右に開く演出）
+       ========================================== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__panel loader__panel--left"></div>
+    <div class="loader__panel loader__panel--right"></div>
+    <div class="loader__center-line"></div>
+    <div class="loader__content">
+      <div class="loader__logo-mark">JCI</div>
+      <p class="loader__company-jp">城北化学工業株式会社</p>
+      <p class="loader__company-en">JOUHOKU CHEMICAL INDUSTRY CO., LTD.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ヘッダー（Z型レイアウトの始点：左上ロゴ → 右上ナビ＆CTA）
+       ========================================== -->
+  <header id="header" class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-badge">JCI</span>
+        <div class="header__logo-text">
+          <span class="header__logo-jp">城北化学工業株式会社</span>
+          <span class="header__logo-en">JOUHOKU CHEMICAL INDUSTRY</span>
+        </div>
+      </a>
+
+      <nav class="header__nav" id="global-nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#top" class="header__nav-link">HOME</a></li>
+          <li class="header__nav-item"><a href="#message" class="header__nav-link">トップメッセージ</a></li>
+          <li class="header__nav-item"><a href="#company" class="header__nav-link">会社概要データ</a></li>
+          <li class="header__nav-item"><a href="#history" class="header__nav-link">沿革</a></li>
+          <li class="header__nav-item"><a href="#access" class="header__nav-link">アクセス</a></li>
+        </ul>
+        <div class="header__cta-Group">
+          <a href="tel:03-3935-3331" class="header__tel">
+            <span class="header__tel-label">お電話でのご相談</span>
+            <span class="header__tel-num">03-3935-3331</span>
+          </a>
+          <a href="#contact-cta" class="btn btn--primary header__btn">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <!-- モバイル用ハンバーガーボタン -->
+      <button type="button" class="header__hamburger" id="hamburger-btn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==========================================
+         ヒーローセクション（Z型視線誘導：左メインコピー → 右下データハイライト）
+         ========================================== -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80" alt="ポリエチレンフィルム製造設備のイメージ" class="hero__bg-img">
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__container">
+        <!-- Z型の左下〜中央：コアメッセージ -->
+        <div class="hero__main-content">
+          <div class="hero__tag-wrapper">
+            <span class="hero__tag">SINCE 1973 / PACKAGING &amp; FILM MANUFACTURER</span>
+          </div>
+          <h1 class="hero__title">
+            人と地球の未来を、<br>
+            <span class="hero__title-accent">確かな技術</span>で包み込む。
+          </h1>
+          <p class="hero__lead">
+            環境対応バイオマス資材からオーダーメイドの特殊フィルムまで。<br>
+            インフレーション機12台を擁する一貫生産体制と小回りの利く対応力で、<br class="u-pc-only">
+            「少量でも、安く・早く・良品」をお客様のもとへお届けします。
+          </p>
+          <div class="hero__actions">
+            <a href="#message" class="btn btn--primary btn--large">
+              私たちについて知る
+              <span class="btn__arrow">→</span>
+            </a>
+            <a href="#company" class="btn btn--outline-white btn--large">
+              会社概要データを見る
+            </a>
+          </div>
+        </div>
+
+        <!-- Z型の右下終点：視線が着地する数値ハイライトカード -->
+        <div class="hero__stats-card">
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">50<small>+年</small></span>
+            <span class="hero__stat-label">昭和48年創業の実績と信頼</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">12<small>台</small></span>
+            <span class="hero__stat-label">自社インフレーション機稼働</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">3<small>拠点</small></span>
+            <span class="hero__stat-label">板橋本社・戸田・笹目の連携体制</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#message" class="hero__scroll" aria-label="下へスクロール">
+        <span class="hero__scroll-text">SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ==========================================
+         1. トップメッセージ（Z型：左ビジュアル＆見出し → 右メッセージ本文）
+         ========================================== -->
+    <section id="message" class="section message">
+      <div class="container">
+        <!-- セクションヘッダー（左上起点） -->
+        <div class="section-header js-fade-up">
+          <span class="section-header__en">TOP MESSAGE</span>
+          <h2 class="section-header__jp">トップメッセージ</h2>
+        </div>
+
+        <!-- Z型2カラムブロック -->
+        <div class="message__grid">
+          <!-- 左カラム：ビジュアル＆モットーカード -->
+          <div class="message__visual js-fade-up">
+            <div class="message__img-box">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="品質管理と製造現場のイメージ" class="message__img">
+              <div class="message__img-Decoration"></div>
+            </div>
+            <div class="message__motto-card">
+              <span class="message__motto-label">OUR FOUNDING SPIRIT / 創業精神</span>
+              <p class="message__motto-text">
+                「ご用命の商品は数は少量でも、<br>安く・早く・良品」
+              </p>
+            </div>
+          </div>
+
+          <!-- 右カラム：代表挨拶テキスト -->
+          <div class="message__body js-fade-up" data-delay="150">
+            <h3 class="message__catch">
+              日々の暮らしを便利にし、<br>
+              環境と社会に貢献するモノづくりを。
+            </h3>
+            <div class="message__text">
+              <p>
+                各種包装資材の製造・販売を営む弊社は、世の中の為に、皆様方の日々の暮らしを便利にするために日々邁進しております。
+              </p>
+              <p>
+                城北化学工業株式会社は創業以来、皆様方の温かいご支援により、今日まで企業存続をすることが出来ております。日頃のご厚誼に深く心より感謝と御礼を申し上げます。
+              </p>
+              <p>
+                弊社はポリエチレンフィルムを主に製造するメーカーでございますが、社会に貢献することをモットーに、CO2削減やバイオマス包装資材といった環境問題への対応をはじめ、お客様の多様なニーズに的確かつ迅速にお応えし、皆様のお役に立てるよう努力しております。
+              </p>
+              <p>
+                創業精神である<strong>「ご用命の商品は数は少量でも、安く・早く・良品」</strong>をモットーに、大手メーカーでは対応が難しい小ロット・短納期にも全力投球で向き合い、今後とも社員一同邁進してまいります。末永いご愛顧を賜りますようお願い申し上げます。
+              </p>
+            </div>
+            <div class="message__signature">
+              <p class="message__role">城北化学工業株式会社 代表取締役社長</p>
+              <p class="message__name">加藤 和久</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         2. 会社概要データ（Z型：左上タイトル＆強み → 右下データテーブル）
+         ========================================== -->
+    <section id="company" class="section company bg-light">
+      <div class="container">
+        <div class="company__layout">
+          <!-- 左側（Sticky追従）：セクション見出し＆特徴サマリー -->
+          <div class="company__side js-fade-up">
+            <div class="section-header">
+              <span class="section-header__en">COMPANY DATA</span>
+              <h2 class="section-header__jp">会社概要データ</h2>
+            </div>
+            <p class="company__side-desc">
+              東京都板橋区の本社と、埼玉県戸田市の自社工場（戸田工場・笹目工場）を連携させ、原反製造から印刷・製袋・スリッター・小巻加工まで一貫した生産体制を構築しています。
+            </p>
+            <div class="company__feature-badges">
+              <div class="feature-badge">
+                <span class="feature-badge__num">01</span>
+                <span class="feature-badge__text">小ロット・短納期にも全力投球</span>
+              </div>
+              <div class="feature-badge">
+                <span class="feature-badge__num">02</span>
+                <span class="feature-badge__text">インフレーション機12台の自社原反生産</span>
+              </div>
+              <div class="feature-badge">
+                <span class="feature-badge__num">03</span>
+                <span class="feature-badge__text">板橋製品技術大賞 優秀賞受賞の技術力</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：会社情報テーブル -->
+          <div class="company__main js-fade-up" data-delay="150">
+            <div class="data-card">
+              <dl class="data-list">
+                <div class="data-list__row">
+                  <dt class="data-list__term">会社名</dt>
+                  <dd class="data-list__desc">城北化学工業株式会社（JOUHOKU CHEMICAL INDUSTRY CO., LTD.）</dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">創業・設立</dt>
+                  <dd class="data-list__desc">
+                    創業：昭和48年（1973年）9月1日<br>
+                    設立：昭和63年（1988年）4月1日
+                  </dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">資本金</dt>
+                  <dd class="data-list__desc">1,000万円</dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">代表取締役</dt>
+                  <dd class="data-list__desc">加藤 和久</dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">従業員数</dt>
+                  <dd class="data-list__desc">40名</dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">事業内容</dt>
+                  <dd class="data-list__desc">
+                    ポリエチレンフィルム・ポリ袋・ビニール袋等の包装資材製造販売、環境対応製品（バイオマス包装資材等）、ミシン目付ロール製品（ワダパック・小巻です®）、新聞・自動包装用フィルム、各種ラミネート・加工品の企画製造
+                  </dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">所在地</dt>
+                  <dd class="data-list__desc">
+                    <div class="location-item">
+                      <span class="location-item__badge">本社</span>
+                      <p>〒175-0083 東京都板橋区徳丸4丁目35-6<br>TEL：<a href="tel:03-3935-3331">03-3935-3331</a></p>
+                    </div>
+                    <div class="location-item">
+                      <span class="location-item__badge">戸田工場</span>
+                      <p>〒335-0034 埼玉県戸田市笹目7-12-2<br>TEL：<a href="tel:048-421-1014">048-421-1014</a></p>
+                    </div>
+                    <div class="location-item">
+                      <span class="location-item__badge">笹目工場</span>
+                      <p>〒335-0034 埼玉県戸田市笹目7-11-14<br>TEL：<a href="tel:048-422-2341">048-422-2341</a></p>
+                    </div>
+                  </dd>
+                </div>
+                <div class="data-list__row">
+                  <dt class="data-list__term">取引銀行</dt>
+                  <dd class="data-list__desc">
+                    みずほ銀行 成増支店<br>
+                    りそな銀行 常盤台支店<br>
+                    きらぼし銀行 赤塚支店
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. 沿革（Z型オルタネイト・タイムライン）
+         ========================================== -->
+    <section id="history" class="section history">
+      <div class="container">
+        <div class="section-header section-header--center js-fade-up">
+          <span class="section-header__en">OUR HISTORY</span>
+          <h2 class="section-header__jp">沿革</h2>
+          <p class="section-header__sub">
+            暖簾分けによる独立営業から総合インフレメーカーへの飛躍、そして次世代の環境対応へ。<br class="u-pc-only">
+            城北化学工業の歩みをご紹介します。
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- 1973 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">1973</span>
+              <span class="timeline__year-jp">昭和48年 9月</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">「和田化学城北営業所」として独立創業</h3>
+              <p class="timeline__desc">
+                現在地（東京都板橋区徳丸）にて、前社長がそれまで20年間務めた和田化学工業株式会社より暖簾分けのかたちで「和田化学城北営業所」として独立営業を開始。
+              </p>
+            </div>
+          </div>
+
+          <!-- 1980 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">1980</span>
+              <span class="timeline__year-jp">昭和55年</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">埼玉県戸田市に「戸田工場」を建設・自社製造を開始</h3>
+              <p class="timeline__desc">
+                埼玉県戸田市に戸田工場（250坪）を建設。それまで仕入れていたポリエチレンフィルムの自社製造を開始。その後、HD手提袋用インラインインフレ機、印刷機、製袋機、ガゼット機、巻直機等を順次設備し、総合インフレメーカーとしての基盤を確立。
+              </p>
+            </div>
+          </div>
+
+          <!-- 1986 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">1986</span>
+              <span class="timeline__year-jp">昭和61年 7月</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">本社営業事務所兼倉庫を増築</h3>
+              <p class="timeline__desc">
+                業務拡大に伴い、板橋区徳丸の本社現在地に営業事務所兼倉庫（50坪）を増築し、供給・管理体制を強化。
+              </p>
+            </div>
+          </div>
+
+          <!-- 1988 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">1988</span>
+              <span class="timeline__year-jp">昭和63年 4月</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">「城北化学工業株式会社」設立・商号改称</h3>
+              <p class="timeline__desc">
+                事業規模の拡大と将来の飛躍に備え、株式会社を設立。商号を現在の「城北化学工業株式会社」へと改称。
+              </p>
+            </div>
+          </div>
+
+          <!-- 平成〜21世紀 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">1990s - 2000s</span>
+              <span class="timeline__year-jp">平成期</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">鉄骨3階建て加工工場の竣工と美女木物流倉庫の開設</h3>
+              <p class="timeline__desc">
+                21世紀を見据え、インフレ工場の隣に加工関係を主体とした鉄骨3階建て工場を竣工。さらに首都高速道路と東京外環自動車道が交差する交通の要衝・戸田市美女木に物流拠点となる新倉庫を構え、生産から配送まで一段と充実した陣容を構築。
+              </p>
+            </div>
+          </div>
+
+          <!-- 近年〜現在 -->
+          <div class="timeline__item js-fade-up">
+            <div class="timeline__year-box">
+              <span class="timeline__year-en">2019 - PRESENT</span>
+              <span class="timeline__year-jp">令和〜現在</span>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">環境対応製品・独自開発製品の推進</h3>
+              <p class="timeline__desc">
+                2019年度「板橋製品技術大賞 優秀賞／板橋法人会賞」を受賞。2022年10月に加藤和久が代表取締役社長に就任。CO2削減に貢献するバイオマス包装資材や高機能自動包装フィルムなど、次世代の環境・社会課題に応える製品開発を推進中。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. アクセス（Z型：左拠点情報リスト → 右Googleマップ）
+         ========================================== -->
+    <section id="access" class="section access bg-light">
+      <div class="container">
+        <div class="section-header js-fade-up">
+          <span class="section-header__en">ACCESS</span>
+          <h2 class="section-header__jp">アクセス・拠点案内</h2>
+        </div>
+
+        <div class="access__grid">
+          <!-- 左カラム：本社および工場アクセス詳細 -->
+          <div class="access__info js-fade-up">
+            <div class="access-card access-card--main">
+              <div class="access-card__header">
+                <span class="access-card__badge">HEAD OFFICE</span>
+                <h3 class="access-card__title">本社（営業・管理本部）</h3>
+              </div>
+              <p class="access-card__address">
+                〒175-0083 東京都板橋区徳丸4丁目35-6
+              </p>
+              <p class="access-card__tel">
+                TEL：<a href="tel:03-3935-3331">03-3935-3331</a>
+              </p>
+              <div class="access-card__train">
+                <h4 class="access-card__train-title">公共交通機関でのアクセス</h4>
+                <ul class="access-card__train-list">
+                  <li>東武東上線<strong>「下赤塚」駅</strong>より徒歩13分</li>
+                  <li>東京メトロ有楽町線・副都心線<strong>「地下鉄赤塚」駅</strong>より徒歩13分</li>
+                </ul>
+              </div>
+              <div class="access-card__actions">
+                <a href="https://maps.google.com/maps?q=東京都板橋区徳丸4丁目35-6" target="_blank" rel="noopener noreferrer" class="btn btn--outline-primary">
+                  Google Mapsで大きく見る ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- 埼玉・戸田エリア工場群 -->
+            <div class="access-sub-grid">
+              <div class="access-card access-card--sub">
+                <span class="access-card__badge access-card__badge--sub">FACTORY 01</span>
+                <h3 class="access-card__title">戸田工場</h3>
+                <p class="access-card__address">〒335-0034 埼玉県戸田市笹目7-12-2</p>
+                <p class="access-card__tel">TEL：<a href="tel:048-421-1014">048-421-1014</a></p>
+                <a href="https://maps.google.com/maps?q=埼玉県戸田市笹目7-12-2" target="_blank" rel="noopener noreferrer" class="access-card__map-link">地図を見る →</a>
+              </div>
+
+              <div class="access-card access-card--sub">
+                <span class="access-card__badge access-card__badge--sub">FACTORY 02</span>
+                <h3 class="access-card__title">笹目工場</h3>
+                <p class="access-card__address">〒335-0034 埼玉県戸田市笹目7-11-14</p>
+                <p class="access-card__tel">TEL：<a href="tel:048-422-2341">048-422-2341</a></p>
+                <a href="https://maps.google.com/maps?q=埼玉県戸田市笹目7-11-14" target="_blank" rel="noopener noreferrer" class="access-card__map-link">地図を見る →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右カラム：Googleマップ埋め込み -->
+          <div class="access__map-wrapper js-fade-up" data-delay="150">
+            <iframe
+              title="城北化学工業株式会社 本社アクセスマップ"
+              src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%E5%BE%B3%E4%B8%B84-35-6&t=m&z=16&output=embed&iwloc=near"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         お問い合わせCTAセクション
+         ========================================== -->
+    <section id="contact-cta" class="cta-section">
+      <div class="container">
+        <div class="cta-box js-fade-up">
+          <div class="cta-box__content">
+            <span class="cta-box__en">CONTACT US</span>
+            <h2 class="cta-box__title">包装資材・オリジナルポリ袋のご相談はお気軽に</h2>
+            <p class="cta-box__desc">
+              環境対応バイオマス袋、規格袋、自動包装フィルム、小ロットの特注品まで、<br class="u-pc-only">
+              用途・品質・ご予算・ご希望納期に合わせて最適なご提案をいたします。
+            </p>
+          </div>
+          <div class="cta-box__actions">
+            <div class="cta-box__tel-block">
+              <span class="cta-box__tel-label">お電話でのお問い合わせ（本社）</span>
+              <a href="tel:03-3935-3331" class="cta-box__tel-number">03-3935-3331</a>
+            </div>
+            <a href="mailto:info@jouhokukagaku.co.jp" class="btn btn--white btn--large">
+              Webからのお問い合わせ →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       フッター
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-badge">JCI</span>
+            <span class="footer__logo-name">城北化学工業株式会社</span>
+          </div>
+          <p class="footer__address">
+            〒175-0083 東京都板橋区徳丸4丁目35-6<br>
+            TEL：03-3935-3331
+          </p>
+        </div>
+        <div class="footer__nav">
+          <ul class="footer__nav-list">
+            <li><a href="#top">トップページ</a></li>
+            <li><a href="#message">トップメッセージ</a></li>
+            <li><a href="#company">会社概要データ</a></li>
+            <li><a href="#history">沿革</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; JOUHOKU CHEMICAL INDUSTRY CO., LTD. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- メインスクリプト -->
+  <script src="main.js"></script>
+</body>
+</html>
