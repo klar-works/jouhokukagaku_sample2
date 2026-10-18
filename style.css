@@ -91,6 +91,43 @@ ul {
 }
 
 /* ==========================================
+   ★画像差し込み箇所を示す視覚ガイド（.show-img-guide 付与時のみ表示）
+   ========================================== */
+body.show-img-guide .img-slot {
+  outline: 3px dashed #ff9800;
+  outline-offset: -3px;
+}
+
+body.show-img-guide .img-slot::after {
+  content: "📷 " attr(data-slot-name);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  z-index: 30;
+  background: rgba(10, 37, 64, 0.92);
+  color: #ffffff;
+  border: 2px solid #ff9800;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+body.show-img-guide .hero__bg.img-slot::after {
+  top: calc(var(--header-height) + 16px);
+  left: 24px;
+  font-size: 0.8rem;
+}
+
+/* ==========================================
    3. オープニングアニメーション（CSS自律型・中央から開く演出）
    ========================================== */
 .loader {
@@ -100,11 +137,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* 2.15秒後に自動でポインターイベントと可視性を解除 */
   animation: loaderContainerHide 0.1s ease 2.15s forwards;
 }
 
-/* 左右の扉パネル（境目が綺麗に馴染むよう対称グラデーションに設定） */
 .loader__panel {
   position: absolute;
   top: 0;
@@ -125,7 +160,6 @@ ul {
   animation: splitOpenRight 1.15s cubic-bezier(0.77, 0, 0.175, 1) 0.95s forwards;
 }
 
-/* 中央から上下に伸びる光のスリットライン */
 .loader__center-line {
   position: absolute;
   top: 0;
@@ -139,7 +173,6 @@ ul {
   animation: centerLineLaser 0.85s var(--ease-out-expo) 0.15s forwards;
 }
 
-/* 中央のロゴコンテンツ */
 .loader__content {
   position: relative;
   z-index: 3;
@@ -181,7 +214,6 @@ ul {
   opacity: 0.85;
 }
 
-/* キーフレーム定義（中央から開く一連のシーケンス） */
 @keyframes centerLineLaser {
   0% {
     transform: translateX(-50%) scaleY(0);
@@ -536,13 +568,14 @@ ul {
 .hero__bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .hero__bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transform: scale(1.12);
   animation: heroBgZoomOut 2.2s var(--ease-out-expo) 0.95s forwards;
 }
@@ -561,13 +594,15 @@ ul {
   inset: 0;
   background: linear-gradient(
     115deg,
-    rgba(10, 37, 64, 0.9) 0%,
-    rgba(10, 37, 64, 0.72) 50%,
-    rgba(30, 144, 255, 0.55) 100%
+    rgba(10, 37, 64, 0.88) 0%,
+    rgba(10, 37, 64, 0.68) 50%,
+    rgba(30, 144, 255, 0.5) 100%
   );
 }
 
 .hero__container {
+  position: relative;
+  z-index: 2;
   width: 100%;
   padding-top: 60px;
   padding-bottom: 80px;
@@ -619,7 +654,6 @@ ul {
   gap: 16px;
 }
 
-/* Z型の右下終点に配置するグラスモーフィズム実績バー */
 .hero__stats-card {
   align-self: flex-end;
   background: rgba(255, 255, 255, 0.12);
@@ -670,6 +704,7 @@ ul {
   position: absolute;
   bottom: 24px;
   left: 36px;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -688,7 +723,7 @@ ul {
 }
 
 /* ==========================================
-   7. トップメッセージ（Z型2カラム）
+   7. トップメッセージ（縦構図写真②が映えるよう高さ設計を最適化）
    ========================================== */
 .message__grid {
   display: grid;
@@ -704,14 +739,16 @@ ul {
   box-shadow: var(--shadow-md);
 }
 
+/* 849404E4...jpg（縦長インフレ機）の全体像が美しく収まるよう高さを480pxに確保 */
 .message__img {
   width: 100%;
-  height: 380px;
+  height: 480px;
   object-fit: cover;
+  object-position: center 40%;
 }
 
 .message__motto-card {
-  margin-top: -40px;
+  margin-top: -44px;
   margin-left: 24px;
   margin-right: 24px;
   position: relative;
@@ -884,11 +921,11 @@ ul {
 }
 
 /* ==========================================
-   9. 沿革（タイムライン）
+   9. 沿革（タイムライン＋実機写真スロット）
    ========================================== */
 .timeline {
   position: relative;
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
   padding-left: 20px;
 }
@@ -957,6 +994,27 @@ ul {
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+.timeline__content--with-img {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.timeline__figure {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.timeline__img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .timeline__item:hover .timeline__content {
   transform: translateX(6px);
   border-color: var(--color-primary);
@@ -975,11 +1033,11 @@ ul {
 }
 
 /* ==========================================
-   10. アクセス（Z型2カラム：左拠点カード → 右マップ）
+   10. アクセス（Z型2カラム：左拠点カード＆工場写真 → 右マップ）
    ========================================== */
 .access__grid {
   display: grid;
-  grid-template-columns: 5fr 6fr;
+  grid-template-columns: 5.2fr 5.8fr;
   gap: 40px;
   align-items: stretch;
 }
@@ -987,13 +1045,27 @@ ul {
 .access-card {
   background: var(--color-white);
   border-radius: var(--radius-md);
-  padding: 32px;
+  padding: 28px;
   box-shadow: var(--shadow-sm);
 }
 
 .access-card--main {
   border-top: 4px solid var(--color-primary);
   margin-bottom: 20px;
+}
+
+.access-card__thumb {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.access-card__img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .access-card__badge {
@@ -1067,7 +1139,7 @@ ul {
 }
 
 .access-card--sub {
-  padding: 20px;
+  padding: 18px;
 }
 
 .access-card--sub .access-card__title {
@@ -1091,7 +1163,7 @@ ul {
 }
 
 .access__map-wrapper {
-  min-height: 460px;
+  min-height: 480px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -1228,7 +1300,7 @@ ul {
 }
 
 /* ==========================================
-   12. スクロールフェードアニメーション（JS未動作時も非表示にならない安全設計）
+   12. スクロールフェードアニメーション
    ========================================== */
 .js-enabled .js-fade-up {
   opacity: 0;
@@ -1357,6 +1429,10 @@ ul {
 
   .timeline__content {
     grid-column: 2;
+  }
+
+  .timeline__content--with-img {
+    grid-template-columns: 1fr;
   }
 
   .access-sub-grid {
