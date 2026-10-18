@@ -14,10 +14,15 @@
   <!-- 共通スタイルシート -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="is-loading">
+<!-- 
+  💡【画像差込ガイドの表示切替】
+  現在、どの写真をどこに入れるか一目でわかるよう body に「show-img-guide」クラスを付けています。
+  画像の配置が終わったら、下の class="show-img-guide" を class="" に変更するとガイド枠が消えます。
+-->
+<body class="show-img-guide">
 
   <!-- ==========================================
-       オープニングアニメーション（中央から左右に開く演出）
+       オープニングアニメーション（井口ポリエチレン風・中央から左右に開く演出）
        ========================================== -->
   <div id="loader" class="loader" aria-hidden="true">
     <div class="loader__panel loader__panel--left"></div>
@@ -74,8 +79,18 @@
          ヒーローセクション（Z型視線誘導：左メインコピー → 右下データハイライト）
          ========================================== -->
     <section class="hero">
-      <div class="hero__bg">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80" alt="ポリエチレンフィルム製造設備のイメージ" class="hero__bg-img">
+      <!-- ==========================================================
+           ★画像差し込み箇所 [01]：ファーストビュー背景（パノラマ工場写真）
+           ・元ファイル名：4202EDDF-6ACC-4C37-9849-9AE5CF5F9066.jpg
+           ・変更後ファイル名：images/top-hero.jpg
+           ・被写体：左側に作業員の方、中央に緑と黄色のインフレ巻取機が並ぶパノラマ写真
+           ========================================================== -->
+      <div class="hero__bg img-slot" data-slot-name="① images/top-hero.jpg（元: 4202EDDF...jpg パノラマ工場全体）">
+        <img
+          src="images/top-hero.jpg"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80';"
+          alt="城北化学工業のポリエチレンフィルム製造工場パノラマ風景"
+          class="hero__bg-img">
         <div class="hero__overlay"></div>
       </div>
 
@@ -135,19 +150,26 @@
          ========================================== -->
     <section id="message" class="section message">
       <div class="container">
-        <!-- セクションヘッダー（左上起点） -->
         <div class="section-header js-fade-up">
           <span class="section-header__en">TOP MESSAGE</span>
           <h2 class="section-header__jp">トップメッセージ</h2>
         </div>
 
-        <!-- Z型2カラムブロック -->
         <div class="message__grid">
-          <!-- 左カラム：ビジュアル＆モットーカード -->
+          <!-- 左カラム：縦構図を活かしたインフレ機ビジュアル＆モットーカード -->
           <div class="message__visual js-fade-up">
-            <div class="message__img-box">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="品質管理と製造現場のイメージ" class="message__img">
-              <div class="message__img-Decoration"></div>
+            <!-- ==========================================================
+                 ★画像差し込み箇所 [02]：トップメッセージ横の象徴写真
+                 ・元ファイル名：849404E4-CCA4-4B1D-B331-6058A6577411.jpg
+                 ・変更後ファイル名：images/top-message.jpg
+                 ・被写体：天井まで続くインフレーション機と正面の白いロール原反（縦長構図）
+                 ========================================================== -->
+            <div class="message__img-box img-slot" data-slot-name="② images/top-message.jpg（元: 849404E4...jpg 正面インフレ機全景）">
+              <img
+                src="images/top-message.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80';"
+                alt="天井までそびえ立つ自社インフレーション成形機とポリエチレン原反"
+                class="message__img">
             </div>
             <div class="message__motto-card">
               <span class="message__motto-label">OUR FOUNDING SPIRIT / 創業精神</span>
@@ -283,7 +305,7 @@
     </section>
 
     <!-- ==========================================
-         3. 沿革（Z型オルタネイト・タイムライン）
+         3. 沿革（タイムライン＋実機写真2枚）
          ========================================== -->
     <section id="history" class="section history">
       <div class="container">
@@ -312,18 +334,32 @@
             </div>
           </div>
 
-          <!-- 1980 -->
+          <!-- 1980（★画像③：インフレ機タワー写真） -->
           <div class="timeline__item js-fade-up">
             <div class="timeline__year-box">
               <span class="timeline__year-en">1980</span>
               <span class="timeline__year-jp">昭和55年</span>
             </div>
             <div class="timeline__dot"></div>
-            <div class="timeline__content">
-              <h3 class="timeline__title">埼玉県戸田市に「戸田工場」を建設・自社製造を開始</h3>
-              <p class="timeline__desc">
-                埼玉県戸田市に戸田工場（250坪）を建設。それまで仕入れていたポリエチレンフィルムの自社製造を開始。その後、HD手提袋用インラインインフレ機、印刷機、製袋機、ガゼット機、巻直機等を順次設備し、総合インフレメーカーとしての基盤を確立。
-              </p>
+            <div class="timeline__content timeline__content--with-img">
+              <div class="timeline__text-group">
+                <h3 class="timeline__title">埼玉県戸田市に「戸田工場」を建設・自社製造を開始</h3>
+                <p class="timeline__desc">
+                  埼玉県戸田市に戸田工場（250坪）を建設。それまで仕入れていたポリエチレンフィルムの自社製造を開始。その後、HD手提袋用インラインインフレ機、印刷機、製袋機、ガゼット機、巻直機等を順次設備し、総合インフレメーカーとしての基盤を確立。
+                </p>
+              </div>
+              <!-- ==========================================================
+                   ★画像差し込み箇所 [03]：沿革①（H.D 5 / H.D 4 インフレ機タワー）
+                   ・元ファイル名：8EC90C53-A1B4-471B-B4BC-FB39E4B1F318.jpg
+                   ・変更後ファイル名：images/top-history-01.jpg
+                   ========================================================== -->
+              <div class="timeline__figure img-slot" data-slot-name="③ images/top-history-01.jpg（元: 8EC90C53...jpg）">
+                <img
+                  src="images/top-history-01.jpg"
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=600&q=80';"
+                  alt="戸田工場のインフレーション設備（H.D号機）"
+                  class="timeline__img">
+              </div>
             </div>
           </div>
 
@@ -357,18 +393,32 @@
             </div>
           </div>
 
-          <!-- 平成〜21世紀 -->
+          <!-- 平成〜21世紀（★画像④：ブルーのポリ袋製袋ライン写真） -->
           <div class="timeline__item js-fade-up">
             <div class="timeline__year-box">
               <span class="timeline__year-en">1990s - 2000s</span>
               <span class="timeline__year-jp">平成期</span>
             </div>
             <div class="timeline__dot"></div>
-            <div class="timeline__content">
-              <h3 class="timeline__title">鉄骨3階建て加工工場の竣工と美女木物流倉庫の開設</h3>
-              <p class="timeline__desc">
-                21世紀を見据え、インフレ工場の隣に加工関係を主体とした鉄骨3階建て工場を竣工。さらに首都高速道路と東京外環自動車道が交差する交通の要衝・戸田市美女木に物流拠点となる新倉庫を構え、生産から配送まで一段と充実した陣容を構築。
-              </p>
+            <div class="timeline__content timeline__content--with-img">
+              <div class="timeline__text-group">
+                <h3 class="timeline__title">鉄骨3階建て加工工場の竣工と美女木物流倉庫の開設</h3>
+                <p class="timeline__desc">
+                  21世紀を見据え、インフレ工場の隣に加工関係を主体とした鉄骨3階建て工場を竣工。さらに首都高速道路と東京外環自動車道が交差する交通の要衝・戸田市美女木に物流拠点となる新倉庫を構え、生産から配送まで一段と充実した陣容を構築。
+                </p>
+              </div>
+              <!-- ==========================================================
+                   ★画像差し込み箇所 [04]：沿革②（ブルーのポリ袋製袋加工機）
+                   ・元ファイル名：91865946-DD65-4E78-834E-74F3DD92BAA4.JPEG
+                   ・変更後ファイル名：images/top-history-02.jpg
+                   ========================================================== -->
+              <div class="timeline__figure img-slot" data-slot-name="④ images/top-history-02.jpg（元: 91865946...JPEG）">
+                <img
+                  src="images/top-history-02.jpg"
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80';"
+                  alt="製袋加工ラインで生産されるブルーのポリエチレン袋"
+                  class="timeline__img">
+              </div>
             </div>
           </div>
 
@@ -391,7 +441,7 @@
     </section>
 
     <!-- ==========================================
-         4. アクセス（Z型：左拠点情報リスト → 右Googleマップ）
+         4. アクセス（Z型：左拠点情報＆工場写真2枚 → 右Googleマップ）
          ========================================== -->
     <section id="access" class="section access bg-light">
       <div class="container">
@@ -401,8 +451,9 @@
         </div>
 
         <div class="access__grid">
-          <!-- 左カラム：本社および工場アクセス詳細 -->
+          <!-- 左カラム：本社および埼玉・戸田エリア工場群 -->
           <div class="access__info js-fade-up">
+            <!-- 本社カード（テキスト＆路線案内） -->
             <div class="access-card access-card--main">
               <div class="access-card__header">
                 <span class="access-card__badge">HEAD OFFICE</span>
@@ -428,9 +479,21 @@
               </div>
             </div>
 
-            <!-- 埼玉・戸田エリア工場群 -->
+            <!-- 埼玉・戸田エリア工場群（実写2枚を配置） -->
             <div class="access-sub-grid">
               <div class="access-card access-card--sub">
+                <!-- ==========================================================
+                     ★画像差し込み箇所 [05]：戸田工場（インフレ設備フロア写真）
+                     ・元ファイル名：A96BA38A-3BA8-405F-AA04-E6BA6166CC91.jpg
+                     ・変更後ファイル名：images/top-factory-toda.jpg
+                     ========================================================== -->
+                <div class="access-card__thumb access-card__thumb--sub img-slot" data-slot-name="⑤ images/top-factory-toda.jpg（元: A96BA38A...jpg）">
+                  <img
+                    src="images/top-factory-toda.jpg"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80';"
+                    alt="戸田工場 インフレーション原反製造ライン"
+                    class="access-card__img">
+                </div>
                 <span class="access-card__badge access-card__badge--sub">FACTORY 01</span>
                 <h3 class="access-card__title">戸田工場</h3>
                 <p class="access-card__address">〒335-0034 埼玉県戸田市笹目7-12-2</p>
@@ -439,6 +502,18 @@
               </div>
 
               <div class="access-card access-card--sub">
+                <!-- ==========================================================
+                     ★画像差し込み箇所 [06]：笹目工場（製袋・加工・検品フロア写真）
+                     ・元ファイル名：A05C09F6-CE43-4EC1-8A7E-ECD5CA9B1456.jpg
+                     ・変更後ファイル名：images/top-factory-sasame.jpg
+                     ========================================================== -->
+                <div class="access-card__thumb access-card__thumb--sub img-slot" data-slot-name="⑥ images/top-factory-sasame.jpg（元: A05C09F6...jpg）">
+                  <img
+                    src="images/top-factory-sasame.jpg"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80';"
+                    alt="笹目工場 製袋・加工・検品フロア"
+                    class="access-card__img">
+                </div>
                 <span class="access-card__badge access-card__badge--sub">FACTORY 02</span>
                 <h3 class="access-card__title">笹目工場</h3>
                 <p class="access-card__address">〒335-0034 埼玉県戸田市笹目7-11-14</p>
