@@ -1,6 +1,6 @@
 /**
  * 城北化学工業株式会社 コーポレートサイト メインスクリプト
- * CodePen等のプレビュー環境でも確実に動作するよう readyState 判定を導入
+ * CodePen・ローカル環境どちらでも確実に動作する初期化設計
  */
 
 const initSite = () => {
@@ -84,7 +84,6 @@ const initSite = () => {
 
     fadeElements.forEach(el => fadeObserver.observe(el));
   } else {
-    // 非対応ブラウザ向けフォールバック
     fadeElements.forEach(el => el.classList.add('is-visible'));
   }
 };
